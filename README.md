@@ -144,6 +144,23 @@ trait Similarity {
 }
 ```
 
+### Mixin class composition
+
+이거 참 java에 없는거고, python에는 있는건데 잘 안써봐서 정확하게 언제 사용하는지 모르겠다. 나중에 실제 개발할때 좀더 자세히 봐야겠다.
+
+### Anonymous function 
+
+### Higher-order functions (고차함수)
+
+누가 자바하면 스칼라 배우기 쉽다고 했냐? 새로운 개념들은 생각보다 어렵다. 예제를 이해하는건 쉬운데, 적용이 잘 안되네
+
+여하튼 고차함수는 `다른 함수를 파라미터로 받거나`, `수행의 결과가 함수`이다.
+
+### Nested Functions (중첩함수)
+
+### Currying
+
+http://docs.scala-lang.org/tutorials/tour/currying.html 평일에도 좀 해야겠다. 
 
 
 
