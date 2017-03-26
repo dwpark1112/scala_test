@@ -87,7 +87,63 @@ println(getTheAnswer()) // print 40
 
 ### Methods
 
-<http://docs.scala-lang.org/tutorials/tour/basics.html>
-나머지는 내일 저녁부터 다시 봐야겠다.
+파이선이랑 비슷한데, 어렵다. 파이선이랑 달리 type을 지정해 줄 수 있는데 굳이 이럴거면 자바가 더 편해보인다.
+
+```scala
+def add(x: Int, y: Int): Int = x + y
+def addThenMultiply(x: Int, y: Int)(muliplier: Int): Int = (x + y) * multiplier
+
+println( addThenMultiply(1, 2)(3) )
+```
+
+### Classes
+
+```scala
+// def
+class Greeter(prefix: String, suffix: String) {
+  def greet(name: String): Unit =
+    println(prefix + name + suffix)
+}
+
+// use
+val greeter = new Greeter("Hello, ", "!")
+greeter.greet("Scala developer")
+```
+
+단순한 클래스 말고, 속성을 많이 가진 클래스는 어떻게 처리해야 될지? 
+아래의 Case classes를 만들어서 넘기면 되려나?
+
+#### Case Classes
+
+이게 엄청난 장점인 것 같은데, Java에서 `value object`랑 entity를 구별해서 코딩하려면 코딩양이 많아진다. final 쓰고, 값 변경되면 새 객체 만들어서 뱉어내거나 등등
+
+스칼라는 아래처럼
+
+```scala
+case class Point(x: Int, y: Int)
+
+val point = Point(1, 2)
+val anotherPoint = Point(1, 2)
+val yeyAnotherPoint = Point(2, 2)
+
+```
+
+코드에서 `point == anotherPoint`는 같은 것으로 취급하고, `point == yeyAnotherPoint`는 다른 것으로 취급한다. 이거 자바로 코딩하려면 hashcode랑 equal 오버라이딩 해야한다.
+
+### Objects
+
+object랑 class의 차이랑 다르게 scala에서는 `single instance`라고 한다. 마치 싱글톤처럼 쓰는 것 멤버필드 선언도 되긴 하는구나
+
+### Traits
+
+java의 abstract class, interface와 동일한 역할을 하는 것으로, java의 그것들처럼 생성자 파라미터를 가질 수 없다. 
+
+```scala
+trait Similarity {
+  def isSimilar(x: Any): Boolean
+}
+```
+
+
 
 
